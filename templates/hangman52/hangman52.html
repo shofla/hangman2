@@ -1,0 +1,152 @@
+
+<h1 class='text-center'>Hangman</h1>
+
+<div class="container-fluid">
+
+<div class="row">
+     
+
+<!--left column-->
+    <div class="col-sm-7">
+        
+<!--    box with lettercontainer-->
+        <div class='lettercontainer'>
+
+<!--        box with all possible letters-->
+            <div class='possiblebox'>
+                <h3 class='title'>Possible Letters</h3>
+                    
+                    <button type='button' id=buttona class='pbutton rowtop'>A</button>
+                    <button type='button' id=buttonb class='pbutton rowtop colbo'>B</button>
+                    <button type='button' id=buttonc class='pbutton rowtop colcp'>C</button>
+                    <button type='button' id=buttond class='pbutton rowtop coldq'>D</button>
+                    <button type='button' id=buttone class='pbutton rowtop coler'>E</button>
+                    <button type='button' id=buttonf class='pbutton rowtop colfs'>F</button>
+                    <button type='button' id=buttong class='pbutton rowtop colgt'>G</button>
+                    <button type='button' id=buttonh class='pbutton rowtop colhu'>H</button>
+                    <button type='button' id=buttoni class='pbutton rowtop coliv'>I</button>
+                    <button type='button' id=buttonj class='pbutton rowtop coljw'>J</button>
+                    <button type='button' id=buttonk class='pbutton rowtop colkx'>K</button>
+                    <button type='button' id=buttonl class='pbutton rowtop colly'>L</button>
+                    <button type='button' id=buttonm class='pbutton rowtop colmz'>M</button>
+                    
+                    <button type='button' id=buttonn class='pbutton rowbottomp colan'>N</button>
+                    <button type='button' id=buttono class='pbutton rowbottomp colbo'>O</button>
+                    <button type='button' id=buttonp class='pbutton rowbottomp colcp'>P</button>
+                    <button type='button' id=buttonq class='pbutton rowbottomp coldq'>Q</button>
+                    <button type='button' id=buttonr class='pbutton rowbottomp coler'>R</button>
+                    <button type='button' id=buttons class='pbutton rowbottomp colfs'>S</button>
+                    <button type='button' id=buttont class='pbutton rowbottomp colgt'>T</button>
+                    <button type='button' id=buttonu class='pbutton rowbottomp colhu'>U</button>
+                    <button type='button' id=buttonv class='pbutton rowbottomp coliv'>V</button>
+                    <button type='button' id=buttonw class='pbutton rowbottomp coljw'>W</button>
+                    <button type='button' id=buttonx class='pbutton rowbottomp colkx'>X</button>
+                    <button type='button' id=buttony class='pbutton rowbottomp colly'>Y</button>
+                    <button type='button' id=buttonz class='pbutton rowbottomp colmz'>Z</button>
+<!--        close box with possible letters-->
+            </div>
+
+            
+<!--        box with chosen letters-->
+            <div class='chosenbox'>
+                <h3 class='title'>Chosen Letters</h3>
+                             
+                        <p  id=chosena class='chosen rowtop colan'>A</p>
+                        <p  id=chosenb class='chosen rowtop colbo'>B</p>
+                        <p  id=chosenc class='chosen rowtop colcp'>C</p>
+                        <p  id=chosend class='chosen rowtop coldq'>D</p>
+                        <p  id=chosene class='chosen rowtop coler'>E</p>
+                        <p  id=chosenf class='chosen rowtop colfs'>F</p>
+                        <p  id=choseng class='chosen rowtop colgt'>G</p>
+                        <p  id=chosenh class='chosen rowtop colhu'>H</p>
+                        <p  id=choseni class='chosen rowtop coliv'>I</p>
+                        <p  id=chosenj class='chosen rowtop coljw'>J</p>
+                        <p  id=chosenk class='chosen rowtop colkx'>K</p>
+                        <p  id=chosenl class='chosen rowtop colly'>L</p>
+                        <p  id=chosenm class='chosen rowtop colmz'>M</p>
+
+                        <p  id=chosenn class='chosen rowbottomc colan'>N</p>
+                        <p  id=choseno class='chosen rowbottomc colbo'>O</p>
+                        <p  id=chosenp class='chosen rowbottomc colcp'>P</p>
+                        <p  id=chosenq class='chosen rowbottomc coldq'>Q</p>
+                        <p  id=chosenr class='chosen rowbottomc coler'>R</p>
+                        <p  id=chosens class='chosen rowbottomc colfs'>S</p>
+                        <p  id=chosent class='chosen rowbottomc colgt'>T</p>
+                        <p  id=chosenu class='chosen rowbottomc colhu'>U</p>
+                        <p  id=chosenv class='chosen rowbottomc coliv'>V</p>
+                        <p  id=chosenw class='chosen rowbottomc coljw'>W</p>
+                        <p  id=chosenx class='chosen rowbottomc colkx'>X</p>
+                        <p  id=choseny class='chosen rowbottomc colly'>Y</p>
+                        <p  id=chosenz class='chosen rowbottomc colmz'>Z</p>
+                
+<!--        close box with chosen letters-->
+            </div>
+            
+<!--        box of correct word-->
+            <div class='wordbox'>
+                <h3 class= 'title'>The Word</h3>
+                
+                        <p id=l1 class='word'>_</p>
+                        <p id=l2 class='word'>_</p>
+                        <p id=l3 class='word'>_</p>
+    
+<!--        close box of correct word       -->
+            </div>
+<!--    close lettercontainer  -->
+        </div>
+<!--close leftcolumn-->
+    </div>
+
+
+<!--    right column-->
+    <div class="col-sm-5">
+        
+<!--    box of hangman images-->
+        <div class='imagebox'>
+                    
+                    <div id=hang1 class='image hanglayout1'></div>
+                    <div id=hang2 class='image hanglayout2'></div>
+                    <div id=hang3 class='image hanglayout3'></div>
+                    <div id=hang4 class='image hanglayout4'></div>
+                    <div id=hang5 class='image hanglayout5'></div>
+                    <div id=hang6 class='image hanglayout6'></div>
+                    <div id=hang7 class='image hanglayout7'></div>
+                    <div id=hang8 class='image hanglayout8'></div>
+                    <div id=hang9 class='image hanglayout9'></div>
+                    <div id=hang101 class='image hanglayout101'></div>
+                    <div id=hang102 class='image hanglayout102'></div>
+                    <div id=hang103 class='image hanglayout103'></div>
+                    <div id=hang104 class='image hanglayout104'></div>
+                    <div id=hang105 class='image hanglayout105'></div>
+                    <div id=hang106 class='image hanglayout106'></div>
+                    <div id=hang107 class='image hanglayout107'></div>
+            
+                    <h3 id=hangcounter class='hangcounter'>0/10</h3>
+<!--    close box of hangman images -->
+        </div>
+<!--close right column-->
+    </div>
+
+
+<!--     close the row containing all content except for title-->
+</div>
+<!--    close the container-fluid box-->
+</div>
+
+
+<!--emptyspace-->
+<div class='container-fluid'>
+    <div class='emptyspace'>
+    </div>
+    
+</div>
+
+<!--<div class='coverspace'></div>-->
+
+
+<!--Variables that must be saved-->
+
+
+
+
+

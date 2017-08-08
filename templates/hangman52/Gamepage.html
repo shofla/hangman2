@@ -1,0 +1,118 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Hangman Sean
+{% endblock %}
+
+{% block content %}
+<h3 class='reload'>{{myarray.a}}</h3>
+
+<div id='overlap'>
+  <div class='mastercontainer'>
+    {% include 'hangman52/hangman52.html' %}
+
+  </div>
+</div>
+
+
+    <input type="hidden" name="win"               value=-1 id="win"/>
+    <input type="hidden" name="n_right_letters"   value=-1 id="n_right_letters"/>
+    <input type="hidden" name="n_wrong_letters"   value=-1 id="n_wrong_letters"/>
+    <input type="hidden" name="n_letters"         value=-1 id="n_letters"/>
+    <input type="hidden" name="start_to_end_time" value=-1 id="start_to_end_time"/>
+
+
+    <input type="hidden" name="ordera"  value=-1 id="ordera"/>
+    <input type="hidden" name="orderb"  value=-1 id="orderb"/>
+    <input type="hidden" name="orderc"  value=-1 id="orderc"/>
+    <input type="hidden" name="orderd"  value=-1 id="orderd"/>
+    <input type="hidden" name="ordere"  value=-1 id="ordere"/>
+    <input type="hidden" name="orderf"  value=-1 id="orderf"/>
+    <input type="hidden" name="orderg"  value=-1 id="orderg"/>
+    <input type="hidden" name="orderh"  value=-1 id="orderh"/>
+    <input type="hidden" name="orderi"  value=-1 id="orderi"/>
+    <input type="hidden" name="orderj"  value=-1 id="orderj"/>
+    <input type="hidden" name="orderk"  value=-1 id="orderk"/>
+    <input type="hidden" name="orderl"  value=-1 id="orderl"/>
+    <input type="hidden" name="orderm"  value=-1 id="orderm"/>
+    <input type="hidden" name="ordern"  value=-1 id="ordern"/>
+    <input type="hidden" name="ordero"  value=-1 id="ordero"/>
+    <input type="hidden" name="orderp"  value=-1 id="orderp"/>
+    <input type="hidden" name="orderq"  value=-1 id="orderq"/>
+    <input type="hidden" name="orderr"  value=-1 id="orderr"/>
+    <input type="hidden" name="orders"  value=-1 id="orders"/>
+    <input type="hidden" name="ordert"  value=-1 id="ordert"/>
+    <input type="hidden" name="orderu"  value=-1 id="orderu"/>
+    <input type="hidden" name="orderv"  value=-1 id="orderv"/>
+    <input type="hidden" name="orderw"  value=-1 id="orderw"/>
+    <input type="hidden" name="orderx"  value=-1 id="orderx"/>
+    <input type="hidden" name="ordery"  value=-1 id="ordery"/>
+    <input type="hidden" name="orderz"  value=-1 id="orderz"/>
+
+<div id='nextbutton'>
+
+    {% next_button %}
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  mynewarray = {{myarray|safe}};
+</script>
+
+<script>
+window.onload = function() {
+
+  var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+  var socket = new WebSocket(ws_scheme + '://' + window.location.host + "/ebay/group{{group.id}}");
+
+  // Handle any errors that occur.
+  socket.onerror = function(error) {
+    console.log('WebSocket Error: ' + error);
+  };
+
+<!--Send message function-->
+sendmessage = function(what) {
+  var msg = {
+          id: {{player.id}},
+      };
+      if(socket.readyState === socket.OPEN){
+          socket.send(JSON.stringify(msg));
+      }
+  //  socket.send('{{player.id}}');
+
+}
+
+  // Show a connected message when the WebSocket is opened.
+  socket.onopen = function(event) {
+    console.log('connected to oTree');
+  };
+
+
+  // Handle messages sent by the server.
+  socket.onmessage = function(event) {
+
+    var obj = jQuery.parseJSON(event.data);
+
+  // Show a disconnected message when the WebSocket is closed.
+  socket.onclose = function(event) {
+    console.log('disconnected from oTree');
+  };
+
+
+};
+
+</script>
+
+<!--Add js-->
+  <script src='{% static "hangman52/js/hangjs52.js" %}'></script>
+
+
+{% endblock %}
+
+{% block styles %}
+    <link href='{% static "hangman52/css/hangcss52.css" %}' rel="stylesheet">
+{% endblock %}
